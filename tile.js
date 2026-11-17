@@ -31,7 +31,7 @@ export const TILE_OPTIONS = {
 };
 
 /** 검수 링크가 여는 계산기 주소 */
-export const TILE_CALC_URL = 'https://yonghao1996.github.io/decotile-calc/';
+export const TILE_CALC_URL = 'https://yonghao1996.github.io/decotile-cal/';
 
 export const tileColors = (type) => (TILE_OPTIONS[type] ?? []).map(([name]) => name);
 export const tileUnitPrice = (type, color) => {

@@ -1,6 +1,6 @@
 # 데코타일 수량 계산기
 
-https://yonghao1996.github.io/decotile-calc/ — 예전 tile.shbom.com 계산기를 템바보드 계산기 방식으로 옮긴 것.
+https://yonghao1996.github.io/decotile-cal/ — 예전 tile.shbom.com 계산기를 템바보드 계산기 방식으로 옮긴 것.
 원본 `web/index.template.html` + 로직 `tile.js` (테스트 `tile.test.js`). 2026-11-17 템바보드 계산기 저장소에서 따로 떼어 냈다.
 
 - 제품: **600 × 600mm 한 사이즈 (접착식·비접착식 동일)**, 낱장 판매. 치수 단위 **cm** (예전 계산기와 같게).

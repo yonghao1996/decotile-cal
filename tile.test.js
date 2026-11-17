@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calculateTiles, tileArea, formatTileOrder, formatTileQuote, encodeTiles, decodeTiles, validateTile, tileUnitPrice } from './tile.js';
+import { calculateTiles, tileArea, formatTileOrder, formatTileSpaces, formatTileQuote, encodeTiles, decodeTiles, validateTile, tileUnitPrice } from './tile.js';
 
 test('장수 = 올림(가로 × 세로 ÷ 3600), 손실분 없음', () => {
   assert.equal(tileArea({ width: 300, height: 400 }).count, 34);   // 33.33
@@ -29,6 +29,7 @@ test('시공면마다 올림하고 같은 옵션은 합친다. 줄 순서 = 스�
     '데코타일 / 2. 비접착식, 색상 / 실버 마블 : 3개',
   ].join('\n'));
   assert.equal(r.total, 37 * 2900 + 3 * 3600);
+  assert.match(formatTileSpaces(r), /\n합계 : 14\.00㎡ · 4\.24평 → 40장$/);
   assert.match(formatTileQuote(r), /합계 : 118,100원$/);
   assert.deepEqual([r.lines[0].item, r.lines[0].note], ['데코타일 600x600 접착식', '마블화이트']);
 });

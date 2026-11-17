@@ -619,6 +619,13 @@ footer {
       });
 
       card.appendChild(grid);
+      if (!errors.length) {
+        const t = tileArea(item);
+        const n = document.createElement('div');
+        n.className = 'note';
+        n.textContent = '면적 ' + t.m2.toFixed(2) + '㎡ · ' + t.pyeong.toFixed(2) + '평 → ' + t.count + '장';
+        card.appendChild(n);
+      }
       if (errors.length) {
         const e = document.createElement('div');
         e.className = 'err';

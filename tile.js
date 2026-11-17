@@ -78,13 +78,16 @@ export function calculateTiles(items) {
 }
 
 const fix = (n, d = 2) => n.toFixed(d);
+const sum = (xs, k) => xs.reduce((n, x) => n + x[k], 0);
 
 export const formatTileOrder = (r) => r.lines.map((l) => `${l.label} : ${l.count}개`).join('\n');
 
 export function formatTileSpaces(r) {
   return r.areas.map((a, i) =>
     `시공면 ${String(i + 1).padStart(2, '0')} : ${TILE_TYPES[a.type].label} ${a.color} ${a.width} × ${a.height}cm`
-    + ` (${fix(a.m2)}㎡ · ${fix(a.pyeong)}평) → ${a.count}장`).join('\n');
+    + ` (${fix(a.m2)}㎡ · ${fix(a.pyeong)}평) → ${a.count}장`)
+    .concat(r.areas.length > 1 ? [`합계 : ${fix(sum(r.areas, 'm2'))}㎡ · ${fix(sum(r.areas, 'pyeong'))}평 → ${sum(r.areas, 'count')}장`] : [])
+    .join('\n');
 }
 
 export function formatTileQuote(r) {

@@ -1,0 +1,8 @@
+{
+  "name": "decotile-calc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "데코타일 수량 계산기",
+  "scripts": { "test": "node --test", "build": "node build.js" }
+}
